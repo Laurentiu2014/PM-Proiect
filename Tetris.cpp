@@ -296,11 +296,7 @@ void drawGameOver() {
   my_lcd.Print_String("GAME OVER", 60, 120);
   my_lcd.Set_Text_Size(2);
   my_lcd.Print_String("Press SELECT", 80, 180);
-  
-  while (digitalRead(BTN_SELECT) == HIGH) {
-  playMelodyNonBlocking(&gameOverMelody);
-  delay(10);  // așteaptă până când SELECT e apăsat (pin LOW)
-}
+
 }
 
 void drawMenu() {
@@ -543,7 +539,14 @@ if(checkCollision(pieceX, pieceY)) {
   updateHighScores();
   gameOver = true;
   drawGameOver();
-  delay(20);
+   
+ while (gameOver=true) {
+     // Redă muzică în fundal
+     playMelodyNonBlocking(&gameOverMelody);
+    if (!digitalRead(BTN_SELECT) == LOW ) {
+       gameOver = false;
+    }
+  }
   inMenu = true;
   gameOver = false;
   drawMenu();
