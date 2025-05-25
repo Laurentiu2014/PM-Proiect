@@ -7,3 +7,7 @@ Am realizat o consola de jocuri pe care am implementat jocul Tetris. dar pe care
 -Librarii: Contine librariile folosite pentru Display ul LCD. Acestea nu pot fi descarcate direct in Arduino IDE asa ca a trebuit sa le adaug extern.
 
 -Tetris.cpp: Programul propriu zis pentru consola.
+
+-Scheme si Diagrame: contine poze cu ce am lucrat in visio si KiCad sau diagramele gasite online.
+
+DEMO: contine poze si video-uri cu proiectul fizic.
